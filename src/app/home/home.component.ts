@@ -11,7 +11,7 @@ import { ChartDataService, CandleData } from '../services/chart-data.service';
 export default class HomeComponent implements OnInit {
   botForm: FormGroup;
   symbols: string[] = ['EUR/USD', 'GBP/USD', 'USD/JPY', 'AAPL', 'GOOGL', 'MSFT'];
-  timeframes: string[] = ['1m', '5m', '15m', '1h', '4h', '1d'];
+  timeframes: string[] = ['1m', '3m', '5m', '15m', '1h', '4h', '1d'];
   signal: string = '';
   chartData: CandleData[] = [];
 
@@ -22,8 +22,8 @@ export default class HomeComponent implements OnInit {
   ) {
     this.botForm = this.fb.group({
       symbol: ['EUR/USD'],
-      timeframe: ['15m'],
-      confidence: [90]
+      timeframe: ['3m'],
+      confidence: [100]
     });
   }
 
