@@ -4,7 +4,7 @@ import { Chart, ChartConfiguration } from 'chart.js';
 @Component({
   selector: 'app-candlestick-chart',
   templateUrl: './candlestick-chart.component.html',
-  styleUrls: ['./candlestick-chart.component.scss']
+  styleUrls: ['./candlestick-chart.component.css']
 })
 export default class CandlestickChartComponent implements OnInit, OnChanges {
   @Input() data!: any[];
