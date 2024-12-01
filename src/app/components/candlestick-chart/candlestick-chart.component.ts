@@ -3,8 +3,8 @@ import { Chart, ChartConfiguration } from 'chart.js';
 
 @Component({
   selector: 'app-candlestick-chart',
-  template: '<div class="chart-container"><canvas #chartCanvas></canvas></div>',
-  styles: ['.chart-container { width: 100%; height: 400px; }']
+  templateUrl: './candlestick-chart.component.html',
+  styleUrls: ['./candlestick-chart.component.scss']
 })
 export default class CandlestickChartComponent implements OnInit, OnChanges {
   @Input() data!: any[];
