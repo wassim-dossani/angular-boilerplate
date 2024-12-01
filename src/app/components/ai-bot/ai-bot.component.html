@@ -1,0 +1,13 @@
+<mat-card class="ai-bot-card">
+  <mat-card-header>
+    <mat-card-title>AI BOT</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="full-width">
+      <input matInput #questionInput placeholder="Ask the AI BOT a question">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="askBot(questionInput.value); questionInput.value = ''">Ask</button>
+    <p *ngIf="botResponse">{{ botResponse }}</p>
+  </mat-card-content>
+</mat-card>
+

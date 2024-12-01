@@ -1,0 +1,38 @@
+<div class="home-container">
+  <form [formGroup]="botForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Symbol</mat-label>
+      <mat-select formControlName="symbol">
+        <mat-option *ngFor="let symbol of symbols" [value]="symbol">{{symbol}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Time Frame</mat-label>
+      <mat-select formControlName="timeframe">
+        <mat-option *ngFor="let tf of timeframes" [value]="tf">{{tf}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confidence Level (%)</mat-label>
+      <input matInput type="number" formControlName="confidence" min="0" max="100">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Generate Signal</button>
+  </form>
+
+  <mat-card *ngIf="signal" class="signal-card">
+    <mat-card-header>
+      <mat-card-title>Signal</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{signal}}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <app-candlestick-chart [data]="chartData"></app-candlestick-chart>
+
+  <app-ai-bot></app-ai-bot>
+</div>
+
